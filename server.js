@@ -28,6 +28,7 @@ app.get('/api/hello', function (req, res) {
 app.get('/api/whoami', function (req, res) {
   let responseObject = {};
   responseObject['ipaddress'] = req.ip;
+  responseObject['software'] = req.get('user-agent');
   responseObject['reqHeaders'] = req.headers;
   res.json(responseObject);
 });
